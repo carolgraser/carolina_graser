@@ -1,0 +1,164 @@
+<!--
+
+    Alterações realizadas:
+
+    Index HomePage:
+
+        Adicionado a opção de imagens com slide na página inicial:
+
+        <section class="banner">
+			<div class="slides">
+				<div class="slide">
+					<img src="../../IMG/back3.jpg" alt="Imagem 1">
+				</div>
+				<div class="slide">
+					<img src="../../IMG/back3.jpg" alt="Imagem 2">
+				</div>
+                <div class="slide">
+					<img src="../../IMG/back3.jpg" alt="Imagem 3">
+				</div>
+			</div>
+		</section>
+
+    CSS Home:
+
+        .banner{
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slides{display: flex;}
+
+        .slide{
+            flex-basis: 100%;
+            flex-grow: 0;
+            flex-shrink: 0;
+            position: relative;
+            animation: slide 10s;
+            height: 450px;
+        }
+
+        @keyframes slide{
+            0% {left: 0px;}
+            20% {left: 0px;}
+            30% {left: -100%;}
+            50% {left: -100%;}
+            60% {left: -200%;}
+            90% {left: -200%;}
+            100% {left: 0px;}
+        }
+
+    Index CadastroProdutosPage:
+
+        Alteração na estrutura do form, com remoção do campo "Descrição do Produto", além da adição da função 'cadastrar' com estrutura do IF para identificar se o preço está muito alto, retornando mensagem:
+
+    - FORM:
+
+        <main>
+        <h2>Fomulário de Cadastro de Produtos</h2>
+        <section class="container-1">
+            <form action=""  id="form" name="form">
+                <div class="campo">
+                <label for="cod_prod">Código do Produto: </label>
+                <input type="text" name="cod_prod" id="cod_prod"><br>
+                </div>
+                <div class="campo">
+                <label for="nome_prod">Nome do Produto: </label>
+                <input type="text" name="nome_prod" id="nome_prod"><br>
+                </div>
+                <div class="campo">
+                <label for="preco_prod">Preço do Produto: </label>
+                <input type="text" name="preco_prod" id="preco_prod"><br>
+                </div>
+                <button type="button" onclick="cadastrar()">Cadastrar Produto</button>
+                </div>
+            </form>     
+    </main>
+
+    - FUNÇÃO:
+
+        function cadastrar() {
+
+        var preco_prod = form.preco_prod;
+
+        if(preco_prod.value > 100){
+            alert("Valor muito alto")
+            preco_prod.focus();
+    }
+
+    Index CafeGeladoPage:
+
+        Adicionado opção com do while solicitando opinião do cliente sobre o site através do prompt:
+
+        <script>
+    let cafeGelado = true;
+
+    while (cafeGelado) {
+        let feedback = prompt('O que está achando do nosso site? (Deixe vazio e clique em cancelar para sair)');
+        if (!feedback) {
+            cafeGelado = false;
+        } 
+        else{}
+    }
+
+</script>
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café e Canela</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../View/Home/index.html"><img src="../../IMG/white-logo.png" alt="Logo escrito Café e Canela em branco"></a>
+    </header>
+    <main>
+        <section class="banner">
+			<div class="slides">
+				<div class="slide">
+					<img src="../../IMG/back3.jpg" alt="Imagem 1">
+				</div>
+				<div class="slide">
+					<img src="../../IMG/back3.jpg" alt="Imagem 2">
+				</div>
+                <div class="slide">
+					<img src="../../IMG/back3.jpg" alt="Imagem 3">
+				</div>
+			</div>
+		</section>
+        <section class="container-1">
+            <a href="../../View/CardapioPage/index.html"><button id="btn_cardapio">Conheça nosso cardápio</button></a>
+        </section>
+
+        <section class="container-2">
+            <div id="box_buttons">
+                <div class="box_button">
+                    <a href="../../View/HistoriaCafePage/index.html"><img src="../../IMG/button1.jpg" alt="Queda de grãos de café com um fundo escuro"> Conheça a história do café</a>
+                </div>
+
+                <div class="box_button">
+                    <a href="../../View/CafeGeladoPage/index.html"><img src="../../IMG/button2.jpg" alt="imagem de um copo com café gelado"> Aprenda a fazer cafe gelado</a>
+                </div>
+
+                <div class="box_button">
+                    <a href="../../View/CursoBarista/index.html"><img src="../../IMG/button3.jpg" alt="Mão colocando o café dentro da máquina"> Curso de barista </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container-3">
+        <a href="#"><img src="../../IMG/facebook.png" alt="Logo do facebook">Café e Canela Facebook</a>
+        <a href="#"><img src="../../IMG/intagram.png" alt="Logo do instagram" style="width: 30px; margin-left: 5px; margin-right: 15px;">Cafe_e_canela</a>
+        <a href="tel:+5541996453214"><img src="../../IMG/whatsapp.png" alt="Logo do whatsapp">+41 99645-3214</a>
+        <a href="../../View/CadastroProdutosPage/index.html"><img id="cad_produto" src="../../IMG/cad_produto.svg">Cadastrar Produto</a>
+        <a href="../../View/Relatorio/index.html"><img id="icon_relatorio" src="../../IMG/relatorio.svg">Relatório</a>
+    </footer>
+</body>
+</html>

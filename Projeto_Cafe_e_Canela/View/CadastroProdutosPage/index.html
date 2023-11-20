@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="../../View/Home/index.html"><img src="../../IMG/white-logo.png" alt="Logo escrito Café e Canela em branco"></a>
+    </header>
+    <main>
+        <h2>Fomulário de Cadastro de Produtos</h2>
+        <section class="container-1">
+            <form action=""  id="form" name="form">
+                <div class="campo">
+                <label for="cod_prod">Código do Produto: </label>
+                <input type="text" name="cod_prod" id="cod_prod"><br>
+                </div>
+                <div class="campo">
+                <label for="nome_prod">Nome do Produto: </label>
+                <input type="text" name="nome_prod" id="nome_prod"><br>
+                </div>
+                <div class="campo">
+                <label for="preco_prod">Preço do Produto: </label>
+                <input type="text" name="preco_prod" id="preco_prod"><br>
+                </div>
+                <button type="button" onclick="cadastrar()">Cadastrar Produto</button>
+                </div>
+            </form>     
+    </main>
+
+	    <footer>
+	<a href="#"><img src="../../IMG/facebook.png" alt="Logo do facebook">Café e Canela Facebook</a>
+	<a href="#"><img src="../../IMG/intagram.png" alt="Logo do instagram" style="width: 30px; margin-left: 5px; margin-right: 15px;">Cafe_e_canela</a>
+	<a href="tel:+5541996453214"><img src="../../IMG/whatsapp.png" alt="Logo do whatsapp">+41 99645-3214</a>
+        </footer>
+</body>
+
+<script>
+
+    function cadastrar() {
+
+        var preco_prod = form.preco_prod;
+
+        if(preco_prod.value > 100){
+            alert("Valor muito alto")
+            preco_prod.focus();
+    }
+}
+    
+</script>
+
+</html>
+
